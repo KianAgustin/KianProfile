@@ -6,5 +6,5 @@
 It introduces myself and showcases my personal information, educational background, skills, hobbies, and interests. #
 # Features : Personal Profile - About Me - - Motto - Educational Background - Skills - Hobbies & Interest - Contact Information #
 # Technologies Used - HTML5 - CSS3 #
-# Live Website https://username.github.io/personal-website/ #
-# GitHub Repository https://github.com/username/personal-website #
+# Live Website https://github.com/KianAgustin/KianProfile/ #
+# GitHub Repository https://kianagustin.github.io/KianProfile/ #

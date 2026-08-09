@@ -158,9 +158,9 @@ input:checked + .slider::before {
   margin-bottom: 13.5px;
 }
 
-.career-highlight{
+.highlight {
   font-size: 0.81rem;
-  color: var(--burgundy-primary);
+  color: var(--burgundy-primary );
 }
 
 /* About / Intro Card */

@@ -1,5 +1,6 @@
 # Personal Portfolio Website #
-# Student Information Name: Kian Gabriel P. Agustin #
+# Student Information #
+# Name: Kian Gabriel P. Agustin #
 # Course: BSIT #
 # Section: 3A #
 # Project Description This project is a simple personal portfolio website created using HTML and CSS. 

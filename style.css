@@ -158,6 +158,11 @@ input:checked + .slider::before {
   margin-bottom: 13.5px;
 }
 
+.career-highlight{
+  font-size: 0.81rem;
+  color: var(--burgundy-primary);
+}
+
 /* About / Intro Card */
 .box-about {
   padding: 22.5px 18px;

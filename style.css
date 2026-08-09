@@ -158,11 +158,6 @@ input:checked + .slider::before {
   margin-bottom: 13.5px;
 }
 
-.highlight {
-  font-size: 0.81rem;
-  color: var(--burgundy-primary );
-}
-
 /* About / Intro Card */
 .box-about {
   padding: 22.5px 18px;
@@ -186,6 +181,11 @@ input:checked + .slider::before {
 .bio-body {
   font-size: 0.81rem;
   color: var(--text-muted);
+}
+
+.highlight {
+  font-size: 0.81rem;
+  color: var(--burgundy-primary );
 }
 
 /* Motto */

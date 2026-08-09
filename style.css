@@ -1,0 +1,415 @@
+/* ==========================================================================
+   1. GLOBAL THEME VARIABLES & RESET RULES
+   ========================================================================== */
+:root {
+  --bg-color: #f6f3ee;
+  --card-bg: #fdfbf7;
+  --text-primary: #1a1a1a;
+  --text-muted: #4a4a4a;
+  --border-color: #2b2b2b;
+  --burgundy-primary: #800020;
+  --burgundy-light: #9e1b32;
+  --burgundy-soft: #f4e8eb;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --transition-speed: 0.3s;
+}
+
+/* Universal box-sizing reset ensures padding/borders don't affect element width calculation */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+  padding: 18px;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+/* ==========================================================================
+   2. TOP NAVIGATION HEADER
+   ========================================================================== */
+.top-bar {
+  max-width: 1080px;
+  margin: 0 auto 18px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 4.5px;
+}
+
+.know-me-title {
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  color: var(--burgundy-primary);
+}
+
+/* Optional Dark/Light Theme Toggle Styling */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  cursor: pointer;
+  font-size: 0.765rem;
+  font-weight: 600;
+}
+
+.theme-toggle input {
+  display: none;
+}
+
+.slider {
+  width: 39.6px;
+  height: 19.8px;
+  background-color: #ccc;
+  border-radius: 18px;
+  position: relative;
+  transition: var(--transition-speed);
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 14.4px;
+  height: 14.4px;
+  border-radius: 50%;
+  top: 2.7px;
+  left: 2.7px;
+  background-color: #ffffff;
+  transition: var(--transition-speed);
+}
+
+input:checked + .slider {
+  background-color: var(--burgundy-primary);
+}
+
+input:checked + .slider::before {
+  transform: translateX(19.8px);
+}
+
+/* ==========================================================================
+   3. MAIN PORTFOLIO GRID LAYOUT
+   ========================================================================== */
+.portfolio-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2.2fr 1fr; /* 2-column layout: wide left, narrower right photo */
+  gap: 13.5px;
+}
+
+/* Reusable Card Base Styling */
+.card {
+  background-color: var(--card-bg);
+  border: 1.35px solid var(--border-color);
+  padding: 18px;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed), border-color var(--transition-speed);
+}
+
+/* Subtle hover elevation effect for interactive UI feel */
+.card:hover {
+  transform: translateY(-1.8px);
+  box-shadow: 0 7.2px 14.4px var(--shadow-color);
+  border-color: var(--burgundy-primary);
+}
+
+/* Inner Grid Rows */
+.grid-row {
+  display: grid;
+  gap: 13.5px;
+}
+
+.row-middle {
+  grid-template-columns: 1fr 1fr;
+  margin-top: 13.5px;
+  margin-bottom: 13.5px;
+}
+
+.row-bottom {
+  grid-template-columns: 1.2fr 1fr;
+  margin-top: 13.5px;
+}
+
+.right-subgroup {
+  display: flex;
+  flex-direction: column;
+  gap: 13.5px;
+}
+
+/* ==========================================================================
+   4. TYPOGRAPHY & COMMON CARD CONTENT
+   ========================================================================== */
+.section-subtitle {
+  font-size: 0.765rem;
+  font-weight: 800;
+  letter-spacing: 0.9px;
+  margin-bottom: 7.2px;
+}
+
+.section-title {
+  font-size: 1.26rem;
+  font-weight: 800;
+  letter-spacing: 1.35px;
+  color: var(--text-primary);
+  margin-bottom: 13.5px;
+}
+
+/* About / Intro Card */
+.box-about {
+  padding: 22.5px 18px;
+}
+
+.main-name {
+  font-size: 2.88rem;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.9px;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.bio-intro {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 13.5px;
+}
+
+.bio-body {
+  font-size: 0.81rem;
+  color: var(--text-muted);
+}
+
+/* Motto */
+.box-motto{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.handwritten-text {
+  font-family: 'Caveat', cursive;
+  color: var(--burgundy-primary);
+  font-size: 1.89rem;
+  line-height: 1.1;
+  margin-top: 5px;
+}
+
+/* Personal Information Card */
+.box-personal-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  font-weight: 700;
+  margin-bottom: 10.8px;
+}
+
+.personal-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4.5px;
+  font-size: 0.765rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.info-item {
+  line-height: 1.4;
+}
+
+.info-item strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+.section-ptitle
+{
+ margin-top: 15px;
+}
+
+/* Educational Timeline Section */
+.box-experience {
+  margin-top: 13.5px;
+}
+
+.timeline-item {
+  margin-bottom: 13.5px;
+  padding-bottom: 9px;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.timeline-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.timeline-header {
+  display: flex;
+  gap: 18px;
+  font-weight: 700;
+  font-size: 0.81rem;
+  align-items: flex-start;
+}
+
+.year {
+  min-width: 81px;
+  color: var(--burgundy-primary);
+}
+
+.school-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.school-info {
+  font-size: 0.675rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* Hobbies, Interests & Skills Section */
+.interest-text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.divider {
+  margin: 9px 0;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.list-skills {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  column-count: 2; /* Displays skills list in two balanced columns */
+  text-align: left;
+}
+
+/* Language Bars */
+.skill-bar-container {
+  margin-bottom: 10.8px;
+}
+
+.lang-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 4.5px;
+}
+
+.bar-bg {
+  width: 100%;
+  height: 12.6px;
+  background-color: var(--burgundy-soft);
+  border: 1px solid var(--border-color);
+  border-radius: 9px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background-color: var(--burgundy-primary);
+  border-radius: 9px;
+  transition: width 1s ease-in-out;
+}
+
+.bar-fill.native { width: 95%; }
+.bar-fill.fluent { width: 80%; }
+
+/* Contact Information Links */
+.box-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10.8px;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 10.8px;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.765rem;
+  font-weight: 600;
+  padding: 5.4px;
+  border-radius: 3.6px;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.contact-link i {
+  color: var(--burgundy-primary);
+  font-size: 0.99rem;
+  width: 18px;
+}
+
+.contact-link:hover {
+  background-color: var(--burgundy-soft);
+  color: var(--burgundy-primary);
+}
+
+/* ==========================================================================
+   5. RIGHT PHOTO COLUMN
+   ========================================================================== */
+.photo-column {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--card-bg);
+  min-height: 450px;
+}
+
+.photo-column img.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  transition: transform var(--transition-speed) ease;
+}
+
+.photo-column:hover img.profile-photo {
+  transform: scale(1.02);
+}
+
+/* ==========================================================================
+   6. RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================================================== */
+
+/* Tablet View: Switches 2-column layout into a single vertical column */
+@media (max-width: 810px) {
+  .portfolio-container {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-column {
+    min-height: 360px;
+    order: -1; /* Moves photo to top on mobile/tablet view */
+  }
+}
+
+/* Mobile View: Collapses sub-grids into a single stacked column */
+@media (max-width: 540px) {
+  .row-middle,
+  .row-bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .main-name {
+    font-size: 2.16rem;
+  }
+}
